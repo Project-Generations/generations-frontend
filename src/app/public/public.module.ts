@@ -6,9 +6,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { PokemonDetailsComponent } from './components/pokedex/pokemon-details/pokemon-details.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, HomeComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    PokedexComponent,
+    PokemonDetailsComponent,
+  ],
   imports: [CommonModule, PublicRoutingModule, SharedModule],
   bootstrap: [PublicComponent],
 })

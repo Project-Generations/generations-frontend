@@ -1,3 +1,6 @@
+@use "./partials/colors";
+
 html {
   width: 100%;
+  color: $black;
 }
