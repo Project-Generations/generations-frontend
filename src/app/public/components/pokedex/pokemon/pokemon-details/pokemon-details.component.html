@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 *ngIf="pokemon" style="text-transform: capitalize">{{ pokemon.name }}</h1>
+
+  <div class="wrapper"></div>
+  <!-- <div class="wrapper">
+    @for (type of pokemon.types; track $index) {
+    <div class="icon {{ type.name }}">
+      <img src="../../../../../assets/svgs/{{ type.name }}.svg" />
+    </div>
+    }
+  </div> -->
+</div>

@@ -1,15 +1,7 @@
 export interface Pokemons {
-  pokeList: Pokemon[];
-}
-
-export interface Type {
-  id: number;
-  name: string;
+  results: Pokemon[];
 }
 
 export interface Pokemon {
-  id: number;
   name: string;
-  spriteUrl: string;
-  types: Type[];
 }

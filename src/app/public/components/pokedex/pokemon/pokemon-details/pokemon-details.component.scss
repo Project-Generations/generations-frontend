@@ -1,0 +1,11 @@
+@use "../../../../../../assets/scss/partials/svg-icons";
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.data {
+  width: 200px;
+}

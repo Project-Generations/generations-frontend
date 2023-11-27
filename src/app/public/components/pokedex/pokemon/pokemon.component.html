@@ -1,0 +1,29 @@
+<div class="container">
+  <div *ngIf="pokemons" class="table-container">
+    <table class="pokemon-table">
+      <thead>
+        <th>Nat. Dex</th>
+        <th></th>
+        <th>Name</th>
+      </thead>
+      <tbody>
+        @for (pokemon of pokemons.results; track $index) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>
+            <img
+              src="../../../../../assets/sprites/{{ $index + 1 }}.png"
+              alt=""
+            />
+          </td>
+          <td>
+            <a [routerLink]="['/pokedex/pokemon']" class="pokemon-anchor">
+              {{ pokemon.name }}</a
+            >
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

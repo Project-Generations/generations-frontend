@@ -1,6 +1,10 @@
-@use "./partials/colors";
-
 html {
   width: 100%;
-  color: $black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100%;
+  margin: 0;
 }

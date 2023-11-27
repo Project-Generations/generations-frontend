@@ -8,12 +8,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrivateComponent } from './private/private.component';
 import { PublicComponent } from './public/public.component';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
+import { errorInterceptor } from './core/interceptors/error.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, PrivateComponent, PublicComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [provideClientHydration(), provideHttpClient(withFetch())],
+  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  providers: [
+    provideClientHydration(),
+    provideHttpClient(withFetch(), withInterceptors([errorInterceptor])),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
