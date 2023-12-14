@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pokemon, Pokemons } from '../models/pokemon';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
+import { Pokemon, Pokemons } from '../models/pokemon/pokemon';
 
 @Injectable({
   providedIn: 'root',
@@ -16,13 +16,7 @@ export class PokemonService {
     );
   }
 
-  getPokemonById(pokemonId: number): Observable<Pokemon> {
-    return this.httpClient.get<Pokemon>(
-      `${environment.apiUrl}/pokemon/${pokemonId}`
-    );
-  }
-
-  getPokemonByName(pokemonName: string): Observable<Pokemon> {
+  getSinglePokemon(pokemonName: string): Observable<Pokemon> {
     return this.httpClient.get<Pokemon>(
       `${environment.apiUrl}/pokemon/${pokemonName}`
     );

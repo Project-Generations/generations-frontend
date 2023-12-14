@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon } from '../../../../../core/models/pokemon';
 import { PokemonService } from '../../../../../core/services/pokemon.service';
+import { take } from 'rxjs';
+import { Pokemon } from '../../../../../core/models/pokemon/pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -9,7 +10,7 @@ import { PokemonService } from '../../../../../core/services/pokemon.service';
   styleUrl: './pokemon-details.component.scss',
 })
 export class PokemonDetailsComponent implements OnInit {
-  routeParam: number = 0;
+  routeParam: string;
   pokemon: Pokemon;
 
   constructor(
@@ -24,15 +25,18 @@ export class PokemonDetailsComponent implements OnInit {
 
   getRouteParams() {
     if (!this.routeParam) {
-      return (this.routeParam = this.activatedRoute.snapshot.params['id']);
+      return (this.routeParam = this.activatedRoute.snapshot.params['name']);
     } else {
       throw Error('Route params are null');
     }
   }
 
   getSinglePoke() {
-    this.pokemonService.getPokemonById(this.routeParam).subscribe((data) => {
-      this.pokemon = data;
-    });
+    this.pokemonService
+      .getSinglePokemon(this.routeParam)
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.pokemon = data;
+      });
   }
 }

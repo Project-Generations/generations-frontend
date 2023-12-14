@@ -1,12 +1,104 @@
-<div class="container">
-  <h1 *ngIf="pokemon" style="text-transform: capitalize">{{ pokemon.name }}</h1>
+<div class="container" *ngIf="pokemon">
+  <main>
+    <div class="poke-card">
+      <div class="card-header">
+        <ul class="poke-header">
+          <li class="header-text">
+            <h3 style="text-transform: capitalize">{{ pokemon.name }}</h3>
+          </li>
+          @for (type of pokemon.types; track $index) {
+          <li class="icon {{ type.type.name }}">
+            <img src="../../../../../assets/svgs/{{ type.type.name }}.svg" />
+          </li>
+          }
+        </ul>
+      </div>
+      <div class="data-stack">
+        <div>
+          <img
+            class="poke-img"
+            src="../../../../../../assets/official-artwork/{{ pokemon.id }}.png"
+          />
+          <table>
+            <thead>
+              <tr>
+                <td>Base stats:</td>
+              </tr>
+            </thead>
+            <tbody>
+              @for (stats of pokemon.stats; track $index) {
+              <tr>
+                <td>{{ stats.stat.name }}</td>
+                <td>{{ stats.base_stat }}</td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
 
-  <div class="wrapper"></div>
-  <!-- <div class="wrapper">
-    @for (type of pokemon.types; track $index) {
-    <div class="icon {{ type.name }}">
-      <img src="../../../../../assets/svgs/{{ type.name }}.svg" />
+        <div>
+          <table>
+            <tbody>
+              <tr>
+                <td>Nat dex.</td>
+                <td>{{ pokemon.id }}</td>
+              </tr>
+              <tr>
+                <td>Height</td>
+                <td>{{ pokemon.height }}</td>
+              </tr>
+              <tr>
+                <td>Weight</td>
+                <td>{{ pokemon.weight }}</td>
+              </tr>
+              <tr>
+                <td>Abilities:</td>
+                @for (ability of pokemon.abilities; track $index) {
+
+                <td>{{ ability.ability.name }}</td>
+                }
+              </tr>
+              <tr>
+                <td>EV Yield:</td>
+                @for (stats of pokemon.stats; track $index) { @if (stats.effort)
+                {
+                <td>{{ stats.effort }} {{ stats.stat.name }}</td>
+                } }
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    }
-  </div> -->
+  </main>
+
+  <!-- <table class="moves-table">
+    <thead>
+      <tr>
+        <th>Lv.</th>
+        <th>Move</th>
+        <th>Source</th>
+        <th>Gen</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (move of response.moves; track $index) { @for (moveDetails of
+      move.version_group_details; track $index){
+      <tr>
+        <td>
+          @if (moveDetails.level_learned_at === 0) {
+          <div>-</div>
+          } @else{
+          {{ moveDetails.level_learned_at }}
+          }
+        </td>
+        <td>
+          {{ move.move.name }}
+        </td>
+        <td>{{ moveDetails.move_learn_method.name }}</td>
+        <td>{{ moveDetails.version_group.name }}</td>
+      </tr>
+      } }
+    </tbody>
+  </table> -->
 </div>

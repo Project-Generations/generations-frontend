@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/partials/colors";
+
 .container {
   margin-top: 100px;
 }
@@ -22,7 +24,17 @@
   flex-flow: wrap;
 }
 
+.wrapper a {
+  text-decoration: none;
+  color: $black;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
 .divider {
   margin-left: 5px;
   margin-right: 5px;
+  color: $light-gray;
 }

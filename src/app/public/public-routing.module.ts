@@ -21,7 +21,7 @@ const routes: Routes = [
         path: 'pokemon',
         children: [
           { path: '', component: PokemonComponent, pathMatch: 'full' },
-          { path: ':id', component: PokemonDetailsComponent },
+          { path: ':name', component: PokemonDetailsComponent },
         ],
       },
       {

@@ -2,6 +2,7 @@
 
 # Assets
 /src/assets/sprites
+/src/assets/official-artwork
 
 # Compiled output
 /dist

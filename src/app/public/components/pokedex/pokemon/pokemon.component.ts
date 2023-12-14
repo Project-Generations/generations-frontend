@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../../../core/services/pokemon.service';
-import { Pokemons } from '../../../../core/models/pokemon';
+import { take } from 'rxjs';
+import { Pokemons } from '../../../../core/models/pokemon/pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -16,8 +17,11 @@ export class PokemonComponent implements OnInit {
   }
 
   getData() {
-    this.pokemonService.getAllPokemons().subscribe((data) => {
-      this.pokemons = data;
-    });
+    this.pokemonService
+      .getAllPokemons()
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.pokemons = data;
+      });
   }
 }
