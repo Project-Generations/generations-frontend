@@ -1,0 +1,45 @@
+@import "../../../../assets/scss/partials/colors";
+
+nav {
+  background-color: $navbar-bg;
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+nav ul img {
+  float: left;
+  width: 100px;
+  margin: 0% 0% 0% 1%;
+}
+
+nav ul li {
+  float: left;
+  height: 100%;
+}
+
+nav ul .auth {
+  float: right;
+}
+
+nav ul li a {
+  display: block;
+  color: $white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover:not(.active) {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: #04aa6d;
+}

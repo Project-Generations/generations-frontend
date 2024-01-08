@@ -1,0 +1,11 @@
+<div class="container">
+  <main>
+    <h2>{{ team.format }}</h2>
+    <h4>{{ team.name }}</h4>
+
+    @for (pokemon of team.pokemonTeam; track $index) {
+    {{ pokemons | json }}
+    <div>{{ pokemon.name }}</div>
+    }
+  </main>
+</div>

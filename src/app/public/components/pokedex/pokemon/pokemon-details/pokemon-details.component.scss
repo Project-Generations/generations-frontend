@@ -1,0 +1,37 @@
+@use "../../../../../../assets/scss/partials/svg-icons";
+@use "../../../../../../assets/scss/partials/card-layout";
+
+.poke-header {
+  width: 100%;
+  margin: 1%;
+}
+
+.poke-header .header-text {
+  float: left;
+}
+
+.poke-header li {
+  float: right;
+  list-style-type: none;
+  margin: 0px 5px 0px 5px;
+}
+
+.data-stack {
+  flex-direction: row;
+  margin: 1%;
+}
+
+.poke-img {
+  width: 300px;
+}
+
+.moves-table th {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.moves-table td {
+  text-align: left;
+  text-transform: capitalize;
+  margin: 1%;
+}

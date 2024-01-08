@@ -1,0 +1,32 @@
+<div class="container">
+  <main>
+    <div class="poke-card">
+      <div class="card-header">
+        <h3>Teams</h3>
+      </div>
+      <table class="pokemon-table">
+        <tbody>
+          @for (item of teams; track $index) {
+          <tr>
+            <td>
+              <a
+                class="pokemon-anchor"
+                routerLink="/dashboard/teams/{{ item.id }}"
+                >{{ item.id }}</a
+              >
+            </td>
+            <td>
+              <a
+                class="pokemon-anchor"
+                routerLink="/dashboard/teams/{{ item.id }}"
+                >{{ item.name }}</a
+              >
+            </td>
+            <td>{{ item.format }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

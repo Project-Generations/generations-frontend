@@ -1,0 +1,40 @@
+@import "../../../../assets/scss/partials/colors";
+
+.container {
+  margin-top: 100px;
+}
+
+.container .branding img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+
+.container .branding h2 {
+  text-align: center;
+}
+
+.container .wrapper {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.wrapper a {
+  text-decoration: none;
+  color: $black;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: $light-gray;
+}

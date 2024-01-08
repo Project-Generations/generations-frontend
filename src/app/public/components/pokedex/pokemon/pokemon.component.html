@@ -1,0 +1,43 @@
+<div class="container" *ngIf="pokemons">
+  @defer {
+  <main>
+    <div class="poke-card">
+      <div class="card-header">
+        <h3>Pokémons</h3>
+      </div>
+      <table class="pokemon-table">
+        <thead>
+          <th>Nat. Dex</th>
+          <th></th>
+          <th>Name</th>
+        </thead>
+        <tbody>
+          @for (pokemon of pokemons.results; track $index) {
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>
+              @defer (on viewport) {
+              <img
+                src="../../../../../assets/sprites/{{ $index + 1 }}.png"
+                alt=""
+              />
+              } @placeholder {<P>Loading...</P>}
+            </td>
+            <td>
+              <a
+                routerLink="/pokedex/pokemon/{{ pokemon.name }}"
+                class="pokemon-anchor"
+              >
+                {{ pokemon.name }}</a
+              >
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </main>
+  } @placeholder (minimum 200ms){
+  <p>Loading...</p>
+  }
+</div>

@@ -1,0 +1,111 @@
+@import "./colors";
+
+.icon {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  text-align: center;
+  transition: 200ms all;
+}
+
+.icon:hover {
+  filter: saturate(200%);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.icon img {
+  width: 20px;
+  vertical-align: middle;
+}
+
+.bug {
+  background: $bug;
+  box-shadow: 0 0 20px $bug;
+}
+
+.dark {
+  background: $dark;
+  box-shadow: 0 0 20px $dark;
+}
+
+.dragon {
+  background: $dragon;
+  box-shadow: 0 0 20px $dragon;
+}
+
+.electric {
+  background: $electric;
+  box-shadow: 0 0 20px $electric;
+}
+
+.fire {
+  background: $fire;
+  box-shadow: 0 0 20px $fire;
+}
+
+.fairy {
+  background: $fairy;
+  box-shadow: 0 0 20px $fairy;
+}
+
+.fighting {
+  background: $fighting;
+  box-shadow: 0 0 20px $fighting;
+}
+
+.flying {
+  background: $flying;
+  box-shadow: 0 0 20px $flying;
+}
+
+.ghost {
+  background: $ghost;
+  box-shadow: 0 0 20px $ghost;
+}
+
+.grass {
+  background: $bug;
+  box-shadow: 0 0 20px $bug;
+}
+
+.ground {
+  background: $ground;
+  box-shadow: 0 0 20px $ground;
+}
+
+.ice {
+  background: $ice;
+  box-shadow: 0 0 20px $ice;
+}
+
+.normal {
+  background: $normal;
+  box-shadow: 0 0 20px $normal;
+}
+
+.poison {
+  background: $poison;
+  box-shadow: 0 0 20px $poison;
+}
+
+.psychic {
+  background: $psychic;
+  box-shadow: 0 0 20px $psychic;
+}
+
+.rock {
+  background: $rock;
+  box-shadow: 0 0 20px $rock;
+}
+
+.steel {
+  background: $steel;
+  box-shadow: 0 0 20px $steel;
+}
+
+.water {
+  background: $water;
+  box-shadow: 0 0 20px $water;
+}
