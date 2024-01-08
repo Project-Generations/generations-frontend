@@ -4,8 +4,30 @@
       <img src="../../../../assets/img/generationslogo.png" />
       <li><a [routerLink]="['/']">Home</a></li>
       <li><a [routerLink]="['/pokedex']">Pokedex</a></li>
-      <li class="auth"><a [routerLink]="['/register']">Register</a></li>
-      <li class="auth"><a [routerLink]="['/login']">Login</a></li>
+      <li>
+        <a [routerLink]="['/dashboard']" *ngIf="authService.currentUserSignal()"
+          >Dashboard</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/dashboard/teambuilder']"
+          *ngIf="authService.currentUserSignal()"
+          >Teambuilder</a
+        >
+      </li>
+      <li class="auth" *ngIf="authService.currentUserSignal() === null">
+        <a [routerLink]="['/register']">Register</a>
+      </li>
+      <li class="auth" *ngIf="authService.currentUserSignal() === null">
+        <a [routerLink]="['/login']">Login</a>
+      </li>
+      <li class="auth">
+        <a (click)="authService.Logout()">Logout</a>
+      </li>
+      <li class="auth" *ngIf="authService.currentUserSignal()">
+        <a>{{ authService.currentUserSignal()?.username }}</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -11,6 +11,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { ItemDetailsComponent } from './components/pokedex/item/item-details/item-details.component';
 import { PokemonComponent } from './components/pokedex/pokemon/pokemon.component';
 import { ItemComponent } from './components/pokedex/item/item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { ItemComponent } from './components/pokedex/item/item.component';
     PokemonComponent,
     ItemComponent,
   ],
-  imports: [CommonModule, NgOptimizedImage, PublicRoutingModule],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+    PublicRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   bootstrap: [PublicComponent],
 })
 export class PublicModule {}

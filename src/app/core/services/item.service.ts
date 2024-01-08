@@ -5,8 +5,5 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ItemService {
-  constructor(private httpClient: HttpClient) {}
-  getAllItems() {}
-
-  getItemsById(itemId: number) {}
+  constructor() {}
 }

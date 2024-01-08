@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment.development';
+import { environment as env } from '../../../environments/environment.development';
 import { Pokemon, Pokemons } from '../models/pokemon/pokemon';
 
 @Injectable({
@@ -12,13 +12,13 @@ export class PokemonService {
 
   getAllPokemons(): Observable<Pokemons> {
     return this.httpClient.get<Pokemons>(
-      `${environment.apiUrl}/pokemon?limit=1300&offset=0`
+      `${env.externalApiUrl}/pokemon?limit=1300&offset=0`
     );
   }
 
   getSinglePokemon(pokemonName: string): Observable<Pokemon> {
     return this.httpClient.get<Pokemon>(
-      `${environment.apiUrl}/pokemon/${pokemonName}`
+      `${env.externalApiUrl}/pokemon/${pokemonName}`
     );
   }
 

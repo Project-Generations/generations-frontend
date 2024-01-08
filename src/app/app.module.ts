@@ -15,13 +15,14 @@ import {
 } from '@angular/common/http';
 import { errorInterceptor } from './core/interceptors/error.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent, PrivateComponent, PublicComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [
     provideClientHydration(),
-    provideHttpClient(withFetch(), withInterceptors([errorInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([authInterceptor])),
   ],
   bootstrap: [AppComponent],
 })

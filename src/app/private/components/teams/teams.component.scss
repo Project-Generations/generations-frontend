@@ -1,0 +1,14 @@
+@use "../../../../assets/scss/partials/card-layout";
+@import "../../../../assets/scss/partials/colors";
+
+.pokemon-table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+td .pokemon-anchor {
+  text-transform: capitalize;
+  color: $black;
+  text-decoration: none;
+}
